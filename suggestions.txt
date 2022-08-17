@@ -1,0 +1,6 @@
+Suggestions to Make Your Project Stand Out!
+
+1- The student uses styling on the TextViews and buttons.
+2- Layouts look nicer than the basic layout.
+3- Navigation uses Capitalized names for the labels.
+4- Navigation uses enter/exit animations.
