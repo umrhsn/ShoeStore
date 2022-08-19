@@ -9,8 +9,8 @@
         android:name="com.umrhsn.shoestore.ui.fragments.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_onBoardingFragment"
-            app:destination="@id/onBoardingFragment"
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
             app:popUpTo="@id/loginFragment" />
         <argument
             android:name="email"
@@ -20,7 +20,24 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/onBoardingFragment"
-        android:name="com.umrhsn.shoestore.ui.fragments.OnBoardingFragment"
-        android:label="OnBoardingFragment" />
+        android:id="@+id/welcomeFragment"
+        android:name="com.umrhsn.shoestore.ui.fragments.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment"
+            app:popUpTo="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.umrhsn.shoestore.ui.fragments.InstructionsFragment"
+        android:label="InstructionsFragment" >
+        <action
+            android:id="@+id/action_instructionsFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.umrhsn.shoestore.ui.fragments.ShoeListFragment"
+        android:label="ShoeListFragment" />
 </navigation>

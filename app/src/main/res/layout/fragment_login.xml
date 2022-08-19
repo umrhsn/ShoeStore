@@ -22,7 +22,7 @@
             android:layout_marginEnd="20dp"
             android:autofillHints=""
             android:gravity="center"
-            android:hint="@string/etEmail_hint"
+            android:hint="@string/etEmailHint"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textColorHint="#757575" />
@@ -37,7 +37,7 @@
             android:layout_marginEnd="20dp"
             android:autofillHints=""
             android:gravity="center"
-            android:hint="@string/etPassword_hint"
+            android:hint="@string/etPasswordHint"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:textColorHint="#757575" />
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_login"
+                android:text="@string/btnLogin"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
-                android:text="@string/btn_sign_up"
+                android:text="@string/btnSignUp"
                 style="?android:attr/buttonBarButtonStyle" />
         </LinearLayout>
     </LinearLayout>
