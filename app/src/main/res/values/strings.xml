@@ -2,7 +2,11 @@
     <string name="app_name">ShoeStore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="login_text">Login Fragment</string>
-    <string name="on_boarding_text">Login Fragment</string>
-    <string name="shoe_list_text">Login Fragment</string>
-    <string name="shoe_detail_text">Login Fragment</string>
+    <string name="on_boarding_text">On-Boarding Fragment</string>
+    <string name="shoe_list_text">Shoe List Fragment</string>
+    <string name="shoe_detail_text">Shoe Details Fragment</string>
+    <string name="etEmail_hint">email address</string>
+    <string name="etPassword_hint">password</string>
+    <string name="btn_login">Log in</string>
+    <string name="btn_sign_up">Sign up</string>
 </resources>
