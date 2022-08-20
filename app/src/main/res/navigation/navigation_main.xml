@@ -10,8 +10,7 @@
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
-            app:destination="@id/welcomeFragment"
-            app:popUpTo="@id/loginFragment" />
+            app:destination="@id/welcomeFragment" />
         <argument
             android:name="email"
             app:argType="string" />
@@ -25,8 +24,7 @@
         android:label="WelcomeFragment" >
         <action
             android:id="@+id/action_welcomeFragment_to_instructionsFragment"
-            app:destination="@id/instructionsFragment"
-            app:popUpTo="@id/welcomeFragment" />
+            app:destination="@id/instructionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/instructionsFragment"
@@ -34,10 +32,27 @@
         android:label="InstructionsFragment" >
         <action
             android:id="@+id/action_instructionsFragment_to_shoeListFragment"
-            app:destination="@id/shoeListFragment" />
+            app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoeListFragment"
         android:name="com.umrhsn.shoestore.ui.fragments.ShoeListFragment"
-        android:label="ShoeListFragment" />
+        android:label="ShoeListFragment" >
+        <action
+            android:id="@+id/action_shoeListFragment_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.umrhsn.shoestore.ui.fragments.ShoeDetailFragment"
+        android:label="ShoeDetailFragment" >
+        <action
+            android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/shoeListFragment" />
+    </fragment>
 </navigation>

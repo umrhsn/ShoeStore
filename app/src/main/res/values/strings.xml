@@ -2,16 +2,27 @@
     <string name="app_name">ShoeStore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="login_text">Login Fragment</string>
+
     <string name="tvWelcomeTitle">Welcome Title</string>
     <string name="tvWelcomeSubtitle">Welcome Subtitle</string>
+
     <string name="tvInstructionsTitle">Instructions Title</string>
     <string name="tvInstructionsSubtitle">Instructions Subtitle</string>
-    <string name="shoe_list_text">Shoe List Fragment</string>
+
+    <string name="tvShoeName">Name:</string>
+    <string name="tvShoeCompany">Company:</string>
+    <string name="tvShoeSize">Size:</string>
+    <string name="tvShoeDescription">Description:</string>
+
     <string name="shoe_detail_text">Shoe Details Fragment</string>
+
     <string name="etEmailHint">email address</string>
     <string name="etPasswordHint">password</string>
+
     <string name="btnLogin">Log in</string>
     <string name="btnSignUp">Sign up</string>
+
     <string name="btnInstructions">Instructions</string>
+
     <string name="btnShoeList">Go to shoe list</string>
 </resources>

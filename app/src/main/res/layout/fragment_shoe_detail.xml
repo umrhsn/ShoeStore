@@ -1,22 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoeDetailFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.fragments.LoginFragment">
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        tools:context=".ui.fragments.ShoeDetailFragment">
+
 
         <TextView
-            android:id="@+id/shoe_detail_text"
+            android:id="@+id/tvShoeName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shoe_detail_text" />
+            android:layout_height="33dp"
+            android:text="@string/tvShoeName"
+            app:layout_constraintBottom_toTopOf="@+id/tvShoeCompany"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/tvShoeCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:text="@string/tvShoeCompany"
+            app:layout_constraintBottom_toTopOf="@+id/tvShoeSize"
+            app:layout_constraintStart_toStartOf="@+id/tvShoeName"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoeName" />
+
+        <TextView
+            android:id="@+id/tvShoeSize"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:text="@string/tvShoeSize"
+            app:layout_constraintBottom_toTopOf="@+id/tvShoeDescription"
+            app:layout_constraintStart_toStartOf="@+id/tvShoeCompany"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoeCompany" />
+
+        <TextView
+            android:id="@+id/tvShoeDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="@string/tvShoeDescription"
+            android:paddingEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvShoeSize"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoeSize" />
+
+        <EditText
+            android:id="@+id/etShoeName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Name"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvShoeDescription" />
+
+        <EditText
+            android:id="@+id/etShoeCompany"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Company"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeCompany"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvShoeDescription" />
+
+        <EditText
+            android:id="@+id/etShoeSize"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Size"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvShoeDescription" />
+
+        <EditText
+            android:id="@+id/etShoeDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Description"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvShoeDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

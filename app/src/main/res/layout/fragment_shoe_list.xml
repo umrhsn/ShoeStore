@@ -1,22 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
-        android:id="@+id/shoeListFragment"
+    <RelativeLayout
+        android:id="@+id/shoeList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.LoginFragment">
+        tools:context=".ui.fragments.ShoeListFragment">
 
-        <TextView
-            android:id="@+id/shoe_list_text"
+        <ScrollView
+            android:id="@+id/shoeItemScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/shoeItemLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- TODO: set text visibility if not empty = gone -->
+                <TextView
+                    android:id="@+id/tvEmptyList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No shoes to display!"
+                    android:textAlignment="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabShoeDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shoe_list_text" />
-
-    </FrameLayout>
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            android:contentDescription="shows shoe details"
+            android:src="@drawable/ic_baseline_subject_24" />
+    </RelativeLayout>
 </layout>
