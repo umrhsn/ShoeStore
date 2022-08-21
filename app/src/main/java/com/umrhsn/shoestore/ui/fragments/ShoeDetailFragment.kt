@@ -36,7 +36,7 @@ class ShoeDetailFragment : Fragment() {
             navigateToShoeListFragment()
         }
 
-        binding.btnSave.setOnClickListener {
+        binding.btnCancel.setOnClickListener {
             navigateToShoeListFragment()
         }
 
