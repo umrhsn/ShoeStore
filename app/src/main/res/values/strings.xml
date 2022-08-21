@@ -26,4 +26,6 @@
 
     <string name="btnShoeList">Go to shoe list</string>
     <string name="miLogOut">Log out</string>
+    <string name="btnSave">Save</string>
+    <string name="btnCancel">Cancel</string>
 </resources>

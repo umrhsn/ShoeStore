@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.umrhsn.shoestore.viewmodels.ShoeListViewModel" />
     </data>
 
     <RelativeLayout
