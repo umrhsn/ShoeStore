@@ -11,12 +11,6 @@
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
-        <argument
-            android:name="email"
-            app:argType="string" />
-        <argument
-            android:name="password"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"

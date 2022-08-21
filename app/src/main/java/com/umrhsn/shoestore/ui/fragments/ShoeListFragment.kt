@@ -1,11 +1,10 @@
 package com.umrhsn.shoestore.ui.fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.umrhsn.shoestore.R
 import com.umrhsn.shoestore.databinding.FragmentLoginBinding
@@ -24,7 +23,17 @@ class ShoeListFragment : Fragment() {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
 
+        setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_main, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+        return true
     }
 }
