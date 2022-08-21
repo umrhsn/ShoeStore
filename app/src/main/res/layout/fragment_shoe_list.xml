@@ -44,6 +44,6 @@
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"
             android:contentDescription="shows shoe details"
-            android:src="@drawable/ic_baseline_subject_24" />
+            android:src="@drawable/ic_baseline_add_24" />
     </RelativeLayout>
 </layout>
