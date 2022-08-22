@@ -15,14 +15,14 @@
         android:layout_height="wrap_content"
         android:foregroundGravity="center_vertical|center|center_horizontal"
         android:gravity="center|center_horizontal|center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".ui.fragments.ShoeDetailFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/shoeDetailFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            tools:context=".ui.fragments.ShoeDetailFragment">
+            android:padding="20dp">
 
 
             <TextView
@@ -68,9 +68,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:hint="Name"
+                android:inputType="text"
                 android:minHeight="48dp"
-                android:text="Name"
+                android:text="@{viewModel.shoeName}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,9 +83,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:hint="Company"
+                android:inputType="text"
                 android:minHeight="48dp"
-                android:text="Company"
+                android:text="@{viewModel.shoeCompany}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeCompany"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -96,9 +98,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:hint="Size"
+                android:inputType="number"
                 android:minHeight="48dp"
-                android:text="Size"
+                android:text="@{viewModel.shoeSize.toString()}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeSize"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -110,9 +113,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:hint="Description"
+                android:inputType="text"
                 android:minHeight="48dp"
-                android:text="Description"
+                android:text="@{viewModel.shoeDescription}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeDescription"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.umrhsn.shoestore.R
 import com.umrhsn.shoestore.databinding.FragmentShoeListBinding
+import com.umrhsn.shoestore.databinding.ShoeItemBinding
+import com.umrhsn.shoestore.models.Shoe
 import com.umrhsn.shoestore.viewmodels.ShoeListViewModel
 
 class ShoeListFragment : Fragment() {
@@ -28,9 +30,25 @@ class ShoeListFragment : Fragment() {
             navigateToShoeDetailFragment()
         }
 
+        shoeListViewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
+            shoeList.forEach { shoe ->
+                addShoeItem(container, shoe)
+            }
+        }
+
         setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    private fun addShoeItem(
+        container: ViewGroup?,
+        shoe: Shoe,
+    ) {
+        val shoeItemBinding: ShoeItemBinding =
+            DataBindingUtil.inflate(layoutInflater, R.layout.shoe_item, container, false)
+        shoeItemBinding.shoe = shoe
+        binding.shoeItemLayout.addView(shoeItemBinding.root)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -1,3 +1,8 @@
 package com.umrhsn.shoestore.models
 
-data class Shoe(val name: String, val size: Int, val company: String, val description: String)
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Shoe(var name: String, var size: Int, var company: String, var description: String) :
+    Parcelable
