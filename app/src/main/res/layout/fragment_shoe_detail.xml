@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.umrhsn.shoestore.viewmodels.ShoeDetailViewModel" />
+            type="com.umrhsn.shoestore.viewmodels.MainViewModel" />
     </data>
 
     <LinearLayout
@@ -71,7 +71,7 @@
                 android:hint="Name"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@{viewModel.shoeName}"
+                android:text="@={viewModel.currentShoe.name}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +86,7 @@
                 android:hint="Company"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@{viewModel.shoeCompany}"
+                android:text="@={viewModel.currentShoe.company}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeCompany"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
                 android:hint="Size"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:text="@{viewModel.shoeSize.toString()}"
+                android:text="@={`` + viewModel.currentShoe.size}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeSize"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +116,7 @@
                 android:hint="Description"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@{viewModel.shoeDescription}"
+                android:text="@={viewModel.currentShoe.description}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeDescription"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -137,6 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:layout_weight="1"
+                android:onClick="@{() -> viewModel.saveShoeData()}"
                 android:text="@string/btnSave" />
 
             <Button
@@ -144,6 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="@{() -> viewModel.closeShoeDetailFragment()}"
                 android:text="@string/btnCancel" />
         </LinearLayout>
     </LinearLayout>

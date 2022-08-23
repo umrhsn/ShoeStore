@@ -4,38 +4,31 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.umrhsn.shoestore.R
 import com.umrhsn.shoestore.databinding.FragmentShoeListBinding
 import com.umrhsn.shoestore.databinding.ShoeItemBinding
 import com.umrhsn.shoestore.models.Shoe
-import com.umrhsn.shoestore.viewmodels.ShoeListViewModel
-import timber.log.Timber
+import com.umrhsn.shoestore.viewmodels.MainViewModel
 
 class ShoeListFragment : Fragment() {
     private lateinit var binding: FragmentShoeListBinding
-    private lateinit var shoeListViewModel: ShoeListViewModel
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
-
-        binding.lifecycleOwner = this
-        shoeListViewModel = ViewModelProvider(this)[ShoeListViewModel::class.java]
-        binding.viewModel = shoeListViewModel
-        Timber.i("shoeListViewModel = $shoeListViewModel")
 
         binding.fabShoeDetail.setOnClickListener {
             navigateToShoeDetailFragment()
         }
 
-        shoeListViewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
-            shoeList.forEach { shoe ->
-                addShoeItem(container, shoe)
-                Timber.i("shoe = $shoe")
+        viewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
+            shoeList?.forEach { shoe ->
+                addShoeItem(shoe)
             }
         }
 
@@ -44,14 +37,15 @@ class ShoeListFragment : Fragment() {
         return binding.root
     }
 
-    private fun addShoeItem(
-        container: ViewGroup?,
-        shoe: Shoe,
-    ) {
-        Timber.i("addShoeItem called")
+    private fun addShoeItem(shoe: Shoe) {
         val shoeItemBinding: ShoeItemBinding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.shoe_item, container, false)
-        shoeItemBinding.shoe = shoe
+            DataBindingUtil.inflate(layoutInflater, R.layout.shoe_item, null, false)
+
+        shoeItemBinding.shoeName.text = shoe.name
+        shoeItemBinding.shoeSize.text = shoe.size.toString()
+        shoeItemBinding.shoeCompany.text = shoe.company
+        shoeItemBinding.shoeDescription.text = shoe.description
+
         binding.shoeItemLayout.addView(shoeItemBinding.root)
     }
 

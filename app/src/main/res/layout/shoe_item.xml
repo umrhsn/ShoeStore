@@ -3,9 +3,6 @@
 
     <data>
 
-        <variable
-            name="shoe"
-            type="com.umrhsn.shoestore.models.Shoe" />
     </data>
 
     <LinearLayout
@@ -15,27 +12,27 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/shoeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Name"
-            android:text="@{shoe.name}" />
+            android:hint="Name" />
 
         <TextView
+            android:id="@+id/shoeCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Company"
-            android:text="@{shoe.company}" />
+            android:hint="Company" />
 
         <TextView
+            android:id="@+id/shoeSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Size"
-            android:text="@{shoe.size}" />
+            android:hint="Size" />
 
         <TextView
+            android:id="@+id/shoeDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Description"
-            android:text="@{shoe.description}" />
+            android:hint="Description" />
     </LinearLayout>
 </layout>
