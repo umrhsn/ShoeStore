@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.umrhsn.shoestore.viewmodels.ShoeListViewModel" />
+            type="com.umrhsn.shoestore.viewmodels.MainViewModel" />
 
         <import type="android.view.View" />
     </data>
