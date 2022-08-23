@@ -1,14 +1,12 @@
 package com.umrhsn.shoestore.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.umrhsn.shoestore.R
@@ -28,14 +26,17 @@ class ShoeDetailFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
 
+        binding.lifecycleOwner = this
+
         shoeDetailViewModel = ViewModelProvider(this)[ShoeDetailViewModel::class.java]
+        Timber.i("shoeDetailViewModel = $shoeDetailViewModel")
+        Timber.i("shoeListViewModel = $shoeListViewModel")
         binding.viewModel = shoeDetailViewModel
 
-        binding.lifecycleOwner = this
 
         binding.btnSave.setOnClickListener {
             val shoe = shoeDetailViewModel.saveShoeData()
-            Timber.i("shoe = $shoe")
+            Timber.i("shoeDetailViewModel.saveShoeData() = $shoe")
             // FIXME: no shoe data
             //  shoe = Shoe(name=, size=0, company=, description=)
             shoeListViewModel.addShoe(shoe)

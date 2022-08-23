@@ -11,6 +11,7 @@ import com.umrhsn.shoestore.databinding.FragmentShoeListBinding
 import com.umrhsn.shoestore.databinding.ShoeItemBinding
 import com.umrhsn.shoestore.models.Shoe
 import com.umrhsn.shoestore.viewmodels.ShoeListViewModel
+import timber.log.Timber
 
 class ShoeListFragment : Fragment() {
     private lateinit var binding: FragmentShoeListBinding
@@ -19,12 +20,13 @@ class ShoeListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View {
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
 
+        binding.lifecycleOwner = this
         shoeListViewModel = ViewModelProvider(this)[ShoeListViewModel::class.java]
         binding.viewModel = shoeListViewModel
-        binding.lifecycleOwner = this
+        Timber.i("shoeListViewModel = $shoeListViewModel")
 
         binding.fabShoeDetail.setOnClickListener {
             navigateToShoeDetailFragment()
@@ -33,6 +35,7 @@ class ShoeListFragment : Fragment() {
         shoeListViewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
             shoeList.forEach { shoe ->
                 addShoeItem(container, shoe)
+                Timber.i("shoe = $shoe")
             }
         }
 
@@ -45,6 +48,7 @@ class ShoeListFragment : Fragment() {
         container: ViewGroup?,
         shoe: Shoe,
     ) {
+        Timber.i("addShoeItem called")
         val shoeItemBinding: ShoeItemBinding =
             DataBindingUtil.inflate(layoutInflater, R.layout.shoe_item, container, false)
         shoeItemBinding.shoe = shoe
