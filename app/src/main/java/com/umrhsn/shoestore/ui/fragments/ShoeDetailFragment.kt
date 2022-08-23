@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.umrhsn.shoestore.R
 import com.umrhsn.shoestore.databinding.FragmentShoeDetailBinding
 import com.umrhsn.shoestore.viewmodels.MainViewModel
-import timber.log.Timber
 
 class ShoeDetailFragment : Fragment() {
     private lateinit var binding: FragmentShoeDetailBinding
@@ -23,10 +22,9 @@ class ShoeDetailFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
 
-        binding.lifecycleOwner = this
-
-        Timber.i("shoeDetailViewModel = $viewModel")
         binding.viewModel = viewModel
+
+        viewModel.createNewShoe()
 
         viewModel.eventClosed.observe(viewLifecycleOwner) { isClosed ->
             if (isClosed == true) {

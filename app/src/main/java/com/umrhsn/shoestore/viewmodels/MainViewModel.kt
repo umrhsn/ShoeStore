@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.umrhsn.shoestore.models.Shoe
-import timber.log.Timber
 
 class MainViewModel : ViewModel() {
     var currentShoe: Shoe? = null
@@ -17,6 +16,10 @@ class MainViewModel : ViewModel() {
 
     init {
         _eventClosed.value = false
+    }
+
+    fun createNewShoe() {
+        currentShoe = Shoe("", 0, "", "")
     }
 
     fun saveShoeData() {
@@ -32,10 +35,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun isListEmpty(): Boolean {
-        Timber.i("isListEmpty called\n" + "_shoeList.value = ${_shoeList.value}")
-        val isEmpty = _shoeList.value == null || _shoeList.value?.isEmpty() == true
-        Timber.i("isEmpty = $isEmpty")
-        return isEmpty
+        return _shoeList.value == null || _shoeList.value?.isEmpty() == true
     }
 
     fun closeShoeDetailFragment() {

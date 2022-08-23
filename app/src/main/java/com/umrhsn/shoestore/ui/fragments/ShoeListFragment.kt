@@ -11,7 +11,6 @@ import com.umrhsn.shoestore.databinding.FragmentShoeListBinding
 import com.umrhsn.shoestore.databinding.ShoeItemBinding
 import com.umrhsn.shoestore.models.Shoe
 import com.umrhsn.shoestore.viewmodels.MainViewModel
-import timber.log.Timber
 
 class ShoeListFragment : Fragment() {
     private lateinit var binding: FragmentShoeListBinding
@@ -23,10 +22,6 @@ class ShoeListFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
 
-        binding.lifecycleOwner = this
-        binding.viewModel = viewModel
-        Timber.i("shoeListViewModel = $viewModel")
-
         binding.fabShoeDetail.setOnClickListener {
             navigateToShoeDetailFragment()
         }
@@ -34,7 +29,6 @@ class ShoeListFragment : Fragment() {
         viewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
             shoeList?.forEach { shoe ->
                 addShoeItem(shoe)
-                Timber.i("shoe = $shoe")
             }
         }
 
