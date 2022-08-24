@@ -44,7 +44,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/big_margin"
             android:contentDescription="shows shoe details"
             android:src="@drawable/ic_add" />
     </RelativeLayout>

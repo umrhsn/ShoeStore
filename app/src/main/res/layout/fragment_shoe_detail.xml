@@ -24,13 +24,13 @@
             android:id="@+id/shoeDetailFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:padding="@dimen/big_padding">
 
 
             <TextView
                 android:id="@+id/tvShoeName"
                 android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_height="@dimen/tv_fixed_height"
                 android:text="@string/tvShoeName"
                 app:layout_constraintBottom_toTopOf="@+id/tvShoeCompany"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
             <TextView
                 android:id="@+id/tvShoeCompany"
                 android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_height="@dimen/tv_fixed_height"
                 android:text="@string/tvShoeCompany"
                 app:layout_constraintBottom_toTopOf="@+id/tvShoeSize"
                 app:layout_constraintStart_toStartOf="@+id/tvShoeName"
@@ -49,7 +49,7 @@
             <TextView
                 android:id="@+id/tvShoeSize"
                 android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_height="@dimen/tv_fixed_height"
                 android:text="@string/tvShoeSize"
                 app:layout_constraintBottom_toTopOf="@+id/tvShoeDescription"
                 app:layout_constraintStart_toStartOf="@+id/tvShoeCompany"
@@ -59,7 +59,7 @@
                 android:id="@+id/tvShoeDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:paddingEnd="20dp"
+                android:paddingEnd="@dimen/big_padding"
                 android:text="@string/tvShoeDescription"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tvShoeSize"
@@ -72,9 +72,9 @@
                 android:ems="10"
                 android:hint="Name"
                 android:inputType="text"
-                android:minHeight="48dp"
+                android:minHeight="@dimen/et_minHeight"
                 android:text="@={viewModel.currentShoe.name}"
-                android:textSize="14sp"
+                android:textSize="@dimen/small_text"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -87,9 +87,9 @@
                 android:ems="10"
                 android:hint="Company"
                 android:inputType="text"
-                android:minHeight="48dp"
+                android:minHeight="@dimen/et_minHeight"
                 android:text="@={viewModel.currentShoe.company}"
-                android:textSize="14sp"
+                android:textSize="@dimen/small_text"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeCompany"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -102,9 +102,9 @@
                 android:ems="10"
                 android:hint="Size"
                 android:inputType="number"
-                android:minHeight="48dp"
+                android:minHeight="@dimen/et_minHeight"
                 android:text="@={`` + viewModel.currentShoe.size}"
-                android:textSize="14sp"
+                android:textSize="@dimen/small_text"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -117,7 +117,7 @@
                 android:ems="10"
                 android:hint="Description"
                 android:inputType="text"
-                android:minHeight="48dp"
+                android:minHeight="@dimen/et_minHeight"
                 android:text="@={viewModel.currentShoe.description}"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvShoeDescription"
@@ -132,13 +132,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="20dp">
+            android:padding="@dimen/big_padding">
 
             <Button
                 android:id="@+id/btnSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="@dimen/big_margin"
                 android:layout_weight="1"
                 android:onClick="@{() -> viewModel.saveShoeData()}"
                 android:text="@string/btnSave" />
