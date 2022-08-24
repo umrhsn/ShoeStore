@@ -20,7 +20,7 @@ class ShoeListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+        binding = FragmentShoeListBinding.inflate(inflater, container, false)
 
         binding.fabShoeDetail.setOnClickListener {
             navigateToShoeDetailFragment()
@@ -41,10 +41,12 @@ class ShoeListFragment : Fragment() {
         val shoeItemBinding: ShoeItemBinding =
             DataBindingUtil.inflate(layoutInflater, R.layout.shoe_item, null, false)
 
-        shoeItemBinding.shoeName.text = shoe.name
-        shoeItemBinding.shoeSize.text = shoe.size.toString()
-        shoeItemBinding.shoeCompany.text = shoe.company
-        shoeItemBinding.shoeDescription.text = shoe.description
+        with(shoeItemBinding) {
+            shoeName.text = shoe.name
+            shoeSize.text = shoe.size.toString()
+            shoeCompany.text = shoe.company
+            shoeDescription.text = shoe.description
+        }
 
         binding.shoeItemLayout.addView(shoeItemBinding.root)
     }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="big_margin">20dp</dimen>
+    <dimen name="big_padding">20dp</dimen>
+    <dimen name="et_minHeight">48dp</dimen>
+    <dimen name="small_text">14sp</dimen>
+    <dimen name="tv_fixed_height">33dp</dimen>
+    <dimen name="small_margin">10dp</dimen>
+</resources>
