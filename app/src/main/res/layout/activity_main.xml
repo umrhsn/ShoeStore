@@ -7,6 +7,7 @@
 
     </data>
 
+    <!--  No need to use ConstraintLayout to hold only one view  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

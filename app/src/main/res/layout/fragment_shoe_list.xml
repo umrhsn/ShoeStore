@@ -11,6 +11,7 @@
         <import type="android.view.View" />
     </data>
 
+    <!--  Used RelativeLayout to allow aligning the fab icon easier than ConstraintLayout, because ui is still simple  -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

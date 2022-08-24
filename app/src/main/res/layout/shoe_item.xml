@@ -5,6 +5,7 @@
 
     </data>
 
+    <!--  This layout consists only of some texts on top of each other can be handled easily with LinearLayout  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
